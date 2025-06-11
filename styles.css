@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+  }
+
+  nav { 
+    font-size: 1.5em;
+    background-color: #132945;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  nav a { 
+    text-decoration: none;
+   }
+  
+  nav a:link { color: #fff; }
+
+  nav a:visited { color: #fff; }
+  
+  nav a:hover { color: yellow; }
+
+  nav ul { 
+    list-style-type: none; 
+    padding-left: 0px;
+    padding-right: 10px;
+    margin: 0;
+  }
+  
+  nav li{ border-bottom: 1px solid #EEEEEE;  
+          text-align: center;
+      padding-top: .5em;
+      padding-bottom: .5em;
+  }
+
+  section a{
+    text-decoration: underline;
+    color: #000000;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: url("images/background.jpg");
+  }
+
+  main{
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  
+  .shopping-cart {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 150px;
+  }
+  
+  button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+
+  img{
+    margin: auto;
+  }
+  
+  .total-price {
+    text-align: right;
+    margin-top: 15px;
+    font-size: 1.2em;
+  }
+  
+  .checkout button {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 12px 20px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .checkout button:hover {
+    opacity: 0.8;
+  }
+  
+  .product-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+    background-color: #132945;
+  }
+  
+  .product-item {
+    border: 1px solid #ddd;
+    margin: 10px;
+    width: calc(25% - 20px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    background: #fff;
+  }
+  
+  .product-item img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  .product-info {
+    padding: 10px;
+  }
+  
+  .product-name {
+    color: #333;
+    font-size: 1.1em;
+    margin: 5px 0;
+  }
+  
+  .product-price {
+    color: #e44d26;
+    font-size: 1.3em;
+    margin: 10px 0;
+  }
+  
+  .add-to-cart {
+    background-color: #008cba;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #005f6b;
+  }
+
+  table { 
+    margin: auto;
+    border: 5px solid #005f6b;
+    width: 600px; 
+    border-spacing: 0;
+  }
+  td, th { 
+    padding: 0.5em;
+    border-style: none;
+    font-family: Arial, sans-serif; 
+  }
+  caption { 
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-bottom: 0.5em; 
+  }
+  .altrow { background-color: #eaeaea; }
+
+  footer {
+    text-align: center;
+    background-color: #132945;
+    color: aliceblue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .product-item {
+      width: calc(33% - 20px);
+    }
+    nav li { display: inline-block;
+      width: 5em;
+      border:#ddd; 
+    }
+    nav a {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    nav ul { text-align: center;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .product-item {
+      width: calc(50% - 20px);
+    }
+    nav li { display: inline-block;
+      width: 5em;
+      border:#ddd; 
+    }
+    nav a {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    nav ul { text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 767px)  {
+    .product-item {
+      width: calc(100% - 20px);
+    }
+  
+    .shopping-cart {
+      width: 95%;
+    }
+  }
+  
+   

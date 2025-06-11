@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Display</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="a_propos.html">A propos</a></li>
+    <li><a href="design.html">Design</a></li> 
+    <li><a href="clothing.html">Vêtement</a></li>
+    <li><a href="machine.html">Équipement</a></li>
+    <li><a href="purchase_rent.html">Panier</a></li>
+  </ul>
+</nav>
+
+<div class="purchase-rental-form">
+  <h2>Acheter ou Louer des Produits</h2>
+
+  <table>  
+    <caption>Frais de Livraison</caption>
+      <tr>
+        <th>Destination</th>
+        <th>Prix</th>
+      </tr>
+      <tr class="altrow">
+        <td>Québec</td>
+        <td>$1.30/100g</td>
+      </tr>
+      <tr>
+        <td>Canada</td>
+        <td>$4.30/100g</td>
+      </tr>
+      <tr class="altrow">
+        <td>États-Unis</td>
+        <td>$5.55/100g</td>
+      </tr>
+      <tr>
+        <td>International</td>
+        <td>$20.0/500g</td>
+      </tr>
+  </table>
+  <br>
+  <form action="process-purchase-rental.php" method="post">
+    <label for="product-select">Choisissez un produit:</label>
+    <select id="product-select" name="product">
+      <option value="nbtshirt">New Balance Hoops Graphic T-Shirt</option>
+      <option value="airjordan1">Air Jordan 1 Mid</option>
+      <option value="nikehoodie">Nike Club Pullover Hoodie</option>
+      <option value="adidasadilette">Adidas Originals Adilette 22</option>
+      <option value="hockey">ensemble de vêtement et équipement de hockey</option>
+      <option value="soccer">Chaussure de soccer</option>
+      <option value="elliptical">Ascend L-200 Performance elliptical</option>
+      <option value="treadmill">Nimbus 2023 treadmill</option>
+      <option value="bike">Rodrigo X-2000 exercise bike</option>
+      <option value="rower">Ascending dragon rower R-300</option>
+      <option value="yoga">Yoga mat</option>
+    </select>
+
+    <label for="purchase-option">Acheter</label>
+    <input type="radio" id="purchase-option" name="action" value="purchase" checked>
+    
+    <label for="rent-option">Louer</label>
+    <input type="radio" id="rent-option" name="action" value="rent">
+    
+    <label for="quantity">Quantité:</label>
+    <input type="number" id="quantity" name="quantity" min="1" value="1">
+    
+    <div id="rental-options" style="display:none;">
+      <label for="duration">Durée de location (jours):</label>
+      <input type="number" id="duration" name="duration" min="1" value="1">
+    </div>
+
+    <button type="submit">Confirmer</button>
+  </form>
+</div>
+
+<script>
+// JavaScript 
+document.addEventListener('DOMContentLoaded', function() {
+  const purchaseOption = document.getElementById('purchase-option');
+  const rentOption = document.getElementById('rent-option');
+  const rentalOptions = document.getElementById('rental-options');
+
+  purchaseOption.addEventListener('change', function() {
+    rentalOptions.style.display = 'none';
+  });
+
+  rentOption.addEventListener('change', function() {
+    rentalOptions.style.display = 'block';
+  });
+});
+</script>
+
+<!-- Shopping Cart Form -->
+<div class="form-section">
+  <form method="post">
+    <div class="form-group">
+      <label for="name">Nom (obligatoire):</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">e-mail:</label>
+      <input type="text" id="email" name="email">
+    </div>
+
+    <!-- Radio Buttons -->
+    <div class="form-group">
+      <label>mode de paiement:</label>
+      <div>
+        <input type="radio" id="credit" name="payment" value="credit">
+        <label for="credit">carte de crédit</label>
+      </div>
+      <div>
+        <input type="radio" id="debit" name="payment" value="debit">
+        <label for="debit">carte de débit</label>
+      </div>
+      <div>
+        <input type="radio" id="paypal" name="payment" value="paypal">
+        <label for="paypal">PayPal</label>
+      </div>
+    </div>
+
+    <!-- Checkboxes -->
+    <div class="form-group">
+      <label>Options supplémentaires:</label>
+      <div>
+        <input type="checkbox" id="gift" name="extra" value="gift" checked>
+        <label for="gift">emballage cadeau</label>
+      </div>
+      <div>
+        <input type="checkbox" id="express" name="extra" value="express" checked>
+        <label for="express">Livraison rapide</label>
+      </div>
+      <div>
+        <input type="checkbox" id="insurance" name="extra" value="insurance" checked>
+        <label for="insurance">Assurance transport</label>
+      </div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="form-group">
+      <label for="notes">Remarque:</label>
+      <textarea id="notes" name="notes" rows="4"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="submit">Soumettre la commande</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+
